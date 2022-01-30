@@ -62,4 +62,20 @@ window.addEventListener('load', ()=>{
   army[0]();
   army[1]();
   army[2]();
+
+  function SumTo(arg) {
+    if (arg == 1){
+        return 1;
+    }else return SumTo(arg-1) + arg;
+
+  }
+  console.log(SumTo(6));
+
+  function CalculateFactorial(n) {
+  if (n == 0 || n == 1){
+      return 1;
+  } return CalculateFactorial(n-1) * n;
+
+  }
+  console.log(CalculateFactorial(3))
 });
