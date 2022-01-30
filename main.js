@@ -78,4 +78,13 @@ window.addEventListener('load', ()=>{
 
   }
   console.log(CalculateFactorial(3));
+
+ const fn = () => {
+     fetch("https://restcountries.com/v3.1/name/united").then((res) =>{
+         return res.json();
+     }).then((res) =>{
+         console.log(res);
+     });
+ };
+ fn();
 });
