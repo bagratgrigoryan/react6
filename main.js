@@ -27,6 +27,39 @@ window.addEventListener('load', ()=>{
   const  onOff = toggle("ON", "OFF");
   console.log(onOff());
   console.log(onOff());
-  console.log(onOff());
-  console.log(onOff());
+
+  function Toggle(...args) {
+      let currentIndex = args.length-1;
+      return ()=>{
+          currentIndex++;
+          if (currentIndex == args.length){
+              currentIndex = 0;
+          }
+          return args[currentIndex];
+
+      }
+  }
+  const togArg = Toggle("slow", "medium","fast");
+  console.log(togArg());
+  console.log(togArg());
+  console.log(togArg());
+
+  function makeArmy() {
+      let shooters = [];
+      let i = 0;
+      while (i < 10){
+          const counter = i;
+          let shooter = function () {
+              console.log(counter);
+          };
+          shooters.push(shooter);
+          i++;
+      }
+      return shooters;
+  }
+
+  let army = makeArmy();
+  army[0]();
+  army[1]();
+  army[2]();
 });
