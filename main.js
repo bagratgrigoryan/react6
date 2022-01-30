@@ -87,4 +87,15 @@ window.addEventListener('load', ()=>{
      });
  };
  fn();
+
+ const FN = async () => {
+     try {
+         const res = await fetch("https://restcountries.com/v3.1/name/united");
+         const json = await res.json();
+         console.log(json);
+     } catch (err) {
+         console.log(err.message);
+     }
+ };
+ FN();
 });
