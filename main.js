@@ -90,12 +90,16 @@ window.addEventListener('load', ()=>{
 
  const FN = async () => {
      try {
-         const res = await fetch("https://restcountries.com/v3.1/name/united");
+         const res = await fetch("http://localhost/gitprojectsphp/phpProject/index.php");
          const json = await res.json();
-         console.log(json);
+         console.log(json.name + " "+ json.surname);
+        document.querySelector('.btn').addEventListener('click', ()=>{
+            document.querySelector('.container').innerHTML += json.name + " "+ json.surname;
+        })
+
      } catch (err) {
          console.log(err.message);
      }
  };
- FN();
+FN();
 });
