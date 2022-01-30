@@ -77,5 +77,5 @@ window.addEventListener('load', ()=>{
   } return CalculateFactorial(n-1) * n;
 
   }
-  console.log(CalculateFactorial(3))
+  console.log(CalculateFactorial(3));
 });
